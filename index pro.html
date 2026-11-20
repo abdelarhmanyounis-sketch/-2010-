@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1B2578">
+<meta name="description" content="دليل المشروع البحثي لمادة البرمجة والذكاء الاصطناعي، الصف الثاني الثانوي، البكالوريا المصرية 2026/2027، محافظة الشرقية.">
+<title>الدليل الشامل للمشروع البحثي | البرمجة والذكاء الاصطناعي 2026-2027</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #F3F5F9;
+  --sheet: #FFFFFF;
+  --grid: #DCE1EF;
+  --rule: #C5CDE6;
+  --ink: #1B2578;
+  --ink-deep: #121A5C;
+  --text: #1A1D33;
+  --muted: #565B85;
+  --red: #D7263D;
+  --mark: #FFE14D;
+  --ok: #1E7F55;
+  --display: 'Reem Kufi', 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --gutter: clamp(16px, 4vw, 40px);
+  --wrap: 1180px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0; font-family: var(--body); font-size: 1.0625rem; line-height: 1.85; color: var(--text);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+h1, h2, h3, p, ul, dl, dd, figure { margin: 0; padding: 0; }
+ul { list-style: none; }
+.hidden { display: none !important; }
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--mark); border-radius: 4px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- الشريط العلوي ---------- */
+.topbar { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 2px solid var(--ink); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+.brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1.25; }
+.brand strong { font-family: var(--display); font-size: 1.3rem; color: var(--ink); font-weight: 700; }
+.brand span { font-size: .78rem; color: var(--muted); }
+.nav { display: flex; align-items: center; gap: 26px; font-size: .95rem; font-weight: 500; }
+.nav a { text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+.nav a:hover { border-bottom-color: var(--red); }
+.nav .nav-cta { background: var(--ink); color: #fff; padding: 7px 18px; border-radius: 999px; border: 0; }
+.nav .nav-cta:hover { background: var(--ink-deep); border: 0; }
+.menu-btn { display: none; background: none; border: 2px solid var(--ink); border-radius: 6px; padding: 5px 14px; font-weight: 600; color: var(--ink); }
+.mobile-nav { display: none; background: var(--paper); border-bottom: 2px solid var(--ink); }
+.mobile-nav a { display: block; padding: 12px var(--gutter); text-decoration: none; border-top: 1px solid var(--rule); font-weight: 500; }
+@media (max-width: 860px) {
+  .nav { display: none; } .menu-btn { display: inline-block; }
+  .mobile-nav.open { display: block; position: sticky; top: 64px; z-index: 49; }
+}
+
+/* ---------- الترويسة ---------- */
+.hero { padding: clamp(36px, 7vw, 88px) 0 clamp(48px, 8vw, 96px); }
+.hero-grid { display: grid; gap: clamp(32px, 5vw, 64px); align-items: center; }
+@media (min-width: 980px) { .hero-grid { grid-template-columns: 1.1fr .9fr; } }
+.hero-org { font-size: .95rem; color: var(--muted); margin-bottom: 18px; max-width: 60ch; }
+.hero-org b { color: var(--ink); font-weight: 600; }
+h1 { font-family: var(--display); font-weight: 700; color: var(--ink); font-size: clamp(2.4rem, 6vw, 4.9rem); line-height: 1.25; }
+.hero-lead { margin-top: 22px; max-width: 56ch; font-size: 1.15rem; color: var(--text); }
+.hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border-radius: 999px; padding: 13px 26px; border: 2px solid var(--ink); background: var(--ink); color: #fff; transition: background .2s, color .2s; }
+.btn:hover { background: var(--ink-deep); }
+.btn svg { width: 20px; height: 20px; }
+.link-u { font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; text-decoration-color: var(--red); }
+
+/* الورقة: العنصر اللافت الوحيد */
+.qsheet {
+  position: relative; background: var(--sheet); border: 2px solid var(--ink); border-radius: 3px;
+  padding: 26px 30px 30px; padding-inline-start: 76px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 35px, #CFD8F3 35px, #CFD8F3 36px);
+  background-position: 0 14px;
+}
+.qsheet::before { content: ""; position: absolute; top: 0; bottom: 0; inset-inline-start: 56px; width: 2px; background: var(--red); opacity: .8; }
+.qsheet-label { font-size: .9rem; font-weight: 600; color: var(--muted); line-height: 36px; }
+.qsheet-q { font-family: var(--display); font-size: clamp(1.25rem, 2.3vw, 1.6rem); color: var(--ink); font-weight: 600; line-height: 36px; margin-bottom: 18px; }
+.qsheet-r { font-weight: 600; line-height: 36px; display: flex; gap: 10px; align-items: baseline; }
+.qsheet-r i { flex: 1; border-bottom: 2px dotted var(--muted); height: 1px; transform: translateY(-4px); }
+.qsheet-note { margin-top: 18px; font-size: .92rem; line-height: 36px; color: var(--muted); }
+.stamp {
+  position: absolute; inset-block-end: 54px; inset-inline-end: 22px; transform: rotate(-9deg);
+  font-family: var(--display); font-weight: 700; font-size: 1.35rem; color: var(--red);
+  border: 4px solid var(--red); border-radius: 8px; padding: 2px 14px; line-height: 1.5; background: rgba(255,255,255,.55);
+  animation: thud .55s .5s cubic-bezier(.2, 1.4, .4, 1) both;
+}
+@keyframes thud { 0% { transform: rotate(-9deg) scale(2.1); opacity: 0; } 70% { opacity: 1; } 100% { transform: rotate(-9deg) scale(1); opacity: 1; } }
+
+/* ---------- العناوين العامة ---------- */
+.section { padding: clamp(48px, 7vw, 88px) 0; }
+.section-head { max-width: 62ch; margin-bottom: 36px; }
+h2 { font-family: var(--display); font-weight: 600; color: var(--ink); font-size: clamp(1.8rem, 3.6vw, 2.7rem); line-height: 1.35; }
+.section-head p { margin-top: 10px; color: var(--muted); }
+.solid { background: var(--sheet); border-block: 2px solid var(--ink); }
+
+/* ---------- ورقة البيانات والجدول الزمني ---------- */
+.facts { display: grid; gap: 40px; }
+@media (min-width: 980px) { .facts { grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; } }
+.fact-sheet { background: var(--sheet); border: 2px solid var(--ink); border-radius: 3px; padding: 8px 26px; }
+.fact-sheet div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.fact-sheet div:last-child { border-bottom: 0; }
+.fact-sheet dt { font-weight: 600; color: var(--muted); }
+.fact-sheet dd { font-weight: 600; color: var(--ink); border-bottom: 2px dotted var(--rule); padding-bottom: 2px; }
+@media (max-width: 520px) { .fact-sheet div { grid-template-columns: 1fr; gap: 2px; } }
+
+.timeline h3 { font-family: var(--display); font-size: 1.4rem; color: var(--ink); font-weight: 600; }
+.timeline > p { margin-top: 6px; color: var(--muted); max-width: 54ch; }
+.ruler { position: relative; margin-top: 54px; }
+.ruler-track { position: relative; height: 22px; border: 2px solid var(--ink); border-radius: 3px; background: var(--sheet); overflow: hidden; }
+.ruler-fill { position: absolute; inset-block: 0; inset-inline-start: 0; width: 0; background: var(--mark); border-inline-end: 3px solid var(--red); transition: width 1s ease; }
+.ruler-ticks { position: absolute; inset: 0; display: flex; }
+.ruler-ticks span { border-inline-end: 2px solid var(--ink); }
+.ruler-ticks span:last-child { border: 0; }
+.ruler-months { display: flex; margin-top: 8px; font-size: .84rem; font-weight: 600; color: var(--muted); }
+.ruler-months span { text-align: center; }
+.pin { position: absolute; top: -40px; inset-inline-start: 0; transform: translateX(50%); white-space: nowrap; font-size: .82rem; font-weight: 700; color: #fff; background: var(--red); padding: 1px 10px; border-radius: 4px; }
+html[dir="rtl"] .pin { transform: translateX(50%); }
+.pin::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--red); }
+.ruler-ends { display: flex; justify-content: space-between; margin-top: 14px; font-size: .88rem; color: var(--muted); }
+.countdown { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.countdown strong { font-family: var(--display); font-size: 2.6rem; color: var(--ink); line-height: 1; }
+.countdown .clock { font-weight: 600; color: var(--muted); }
+.flex-note { margin-top: 18px; padding: 12px 16px; background: var(--mark); border-radius: 3px; font-size: .95rem; font-weight: 500; max-width: 54ch; }
+
+/* ---------- القواعد (دفتر الأستاذ) ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.chip { background: transparent; border: 2px solid var(--ink); color: var(--ink); border-radius: 999px; padding: 5px 18px; font-weight: 600; font-size: .92rem; }
+.chip[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.ledger { border: 2px solid var(--ink); border-radius: 3px; background: var(--sheet); }
+.rule { display: grid; grid-template-columns: 76px 1fr; border-bottom: 1px solid var(--rule); }
+.rule:last-child { border-bottom: 0; }
+.rule-n { border-inline-end: 2px solid var(--red); display: flex; align-items: flex-start; justify-content: center; padding-top: 20px; font-family: var(--display); font-size: 1.7rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.rule-b { padding: 20px 26px 22px; }
+.rule-b h3 { font-size: 1.2rem; font-weight: 700; color: var(--ink); line-height: 1.5; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.rule-b h3 small { font-size: .82rem; font-weight: 500; color: var(--muted); }
+.rule-b p { margin-top: 6px; max-width: 70ch; color: var(--text); }
+.rule-b mark { background: var(--mark); color: inherit; padding: 0 4px; border-radius: 2px; }
+@media (max-width: 520px) { .rule { grid-template-columns: 54px 1fr; } .rule-n { font-size: 1.35rem; } .rule-b { padding-inline: 16px; } }
+
+/* ---------- لوحة الأدوار ---------- */
+.board-q { position: relative; max-width: 640px; margin-inline: auto; text-align: center; background: var(--ink); color: #fff; border-radius: 3px; padding: 22px 26px; }
+.board-q small { display: block; font-size: .88rem; opacity: .8; font-weight: 500; }
+.board-q strong { font-family: var(--display); font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 600; line-height: 1.5; }
+.board-q::after { content: ""; position: absolute; top: 100%; left: 50%; width: 2px; height: 34px; background: var(--ink); transform: translateX(-50%); }
+.axes { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 34px; padding-top: 34px; }
+.axes::before { content: ""; position: absolute; top: 0; inset-inline: 10%; height: 2px; background: var(--ink); }
+.axis { position: relative; text-align: start; background: var(--sheet); border: 2px solid var(--ink); border-radius: 3px; padding: 14px; display: flex; flex-direction: column; gap: 8px; transition: background .2s; }
+.axis::before { content: ""; position: absolute; top: -36px; left: 50%; width: 2px; height: 34px; background: var(--ink); transform: translateX(-50%); }
+.axis:hover { background: #EEF1FA; }
+.axis[aria-selected="true"] { background: var(--mark); }
+.axis .a-top { display: flex; align-items: center; gap: 10px; }
+.axis .a-who { font-size: .8rem; font-weight: 600; color: var(--muted); line-height: 1.4; }
+.axis[aria-selected="true"] .a-who { color: var(--text); }
+.axis .a-name { font-weight: 700; color: var(--ink); line-height: 1.5; font-size: 1rem; }
+.axis .a-axis { font-size: .9rem; line-height: 1.6; }
+.idx { width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; flex-shrink: 0; }
+@media (max-width: 980px) {
+  .board-q::after { display: none; }
+  .axes { grid-template-columns: 1fr; padding-top: 0; padding-inline-end: 28px; margin-top: 22px; }
+  .axes::before { inset-inline: auto; right: 8px; top: -22px; bottom: 28px; width: 2px; height: auto; }
+  .axis::before { top: 50%; left: auto; right: -18px; width: 18px; height: 2px; transform: none; }
+}
+.avatar { border-radius: 50%; overflow: hidden; border: 2px solid var(--ink); background: var(--sheet); flex-shrink: 0; cursor: zoom-in; display: block; padding: 0; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.avatar.s44 { width: 44px; height: 44px; } .avatar.s64 { width: 64px; height: 64px; } .avatar.s88 { width: 88px; height: 88px; }
+
+.axis-detail { margin-top: 26px; background: var(--sheet); border: 2px solid var(--ink); border-radius: 3px; padding: clamp(20px, 3vw, 34px); display: grid; gap: 22px; }
+@media (min-width: 860px) { .axis-detail { grid-template-columns: 1fr 1fr; gap: 44px; } }
+.d-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.d-head small { display: block; font-weight: 600; color: var(--muted); font-size: .9rem; }
+.d-head strong { font-family: var(--display); font-size: 1.45rem; color: var(--ink); font-weight: 600; line-height: 1.4; }
+.axis-detail h3 { font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.axis-detail .desc { max-width: 56ch; }
+.contact { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: .95rem; padding: 7px 18px; border-radius: 999px; border: 2px solid var(--ink); color: var(--ink); background: transparent; }
+.pill:hover { background: var(--ink); color: #fff; }
+.pill.wa { border-color: var(--ok); color: var(--ok); } .pill.wa:hover { background: var(--ok); color: #fff; }
+.deliver h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 700; color: var(--muted); }
+.deliver li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.deliver li:last-child { border-bottom: 0; }
+.deliver li::before { content: "✓"; color: var(--ok); font-weight: 700; }
+.note { margin-top: 24px; max-width: 72ch; padding: 14px 18px; border-inline-start: 6px solid var(--red); background: var(--sheet); border-radius: 3px; font-size: .98rem; }
+
+/* ---------- المساعد ---------- */
+.assistant { max-width: 960px; margin-inline: auto; background: var(--sheet); border: 2px solid var(--ink); border-radius: 3px; overflow: hidden; }
+.a-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; background: var(--ink); color: #fff; }
+.a-bar h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+.a-bar p { font-size: .84rem; opacity: .8; }
+.assistant-status { display: inline-flex; align-items: center; gap: 7px; margin-top: 6px; padding: 2px 10px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; color: var(--mark); font-size: .78rem; font-weight: 600; }
+.assistant-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.a-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.tool { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.55); border-radius: 999px; padding: 5px 14px; font-size: .86rem; font-weight: 600; }
+.tool:hover { background: rgba(255,255,255,.14); }
+.quick { padding: 14px 20px; border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 8px 18px; background: var(--paper); }
+.quick button { background: none; border: 0; padding: 2px 0; font-weight: 600; font-size: .92rem; color: var(--ink); text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 5px; text-align: start; }
+.quick button:hover { background: var(--mark); }
+#chat-messages { height: 430px; overflow-y: auto; padding: 22px; display: flex; flex-direction: column; gap: 16px; background: var(--sheet); }
+.msg { display: flex; gap: 12px; align-items: flex-start; }
+.msg-user { flex-direction: row-reverse; }
+.msg-av { width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: var(--mark); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .78rem; flex-shrink: 0; }
+.msg-user .msg-av { background: var(--mark); color: var(--ink); }
+.bubble { max-width: min(640px, 86%); padding: 12px 16px; border-radius: 14px; font-size: .98rem; line-height: 1.75; }
+.msg-ai .bubble { background: var(--paper); border: 1.5px solid var(--rule); border-start-start-radius: 3px; }
+.msg-user .bubble { background: var(--ink); color: #fff; border-start-end-radius: 3px; }
+.bubble p { margin: 3px 0; } .bubble ul { list-style: disc; padding-inline-start: 22px; margin: 6px 0; } .bubble li { margin: 2px 0; }
+.bubble strong { color: var(--ink); font-weight: 700; }
+.bubble .listen { margin-top: 6px; background: none; border: 0; padding: 0; font-size: .84rem; font-weight: 600; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.reply-mode { display: block; margin-top: 7px; color: var(--muted); font-size: .76rem; }
+.typing { display: flex; gap: 6px; padding: 16px 18px; }
+.typing i { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); animation: blink 1.2s infinite; }
+.typing i:nth-child(2) { animation-delay: .2s; } .typing i:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+#voice-status-bar { padding: 8px 20px; background: var(--mark); border-top: 1px solid var(--rule); font-weight: 600; font-size: .88rem; display: flex; align-items: center; gap: 10px; }
+#voice-status-bar::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red); animation: blink 1s infinite; }
+#chat-form { display: flex; gap: 10px; align-items: center; padding: 14px 16px; border-top: 2px solid var(--ink); background: var(--paper); }
+#chat-input { flex: 1; min-width: 0; font: inherit; font-size: 1rem; padding: 11px 16px; border: 2px solid var(--ink); border-radius: 8px; background: var(--sheet); color: var(--text); }
+#chat-input::placeholder { color: #7B80A6; }
+.icon-btn { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--ink); background: var(--sheet); color: var(--ink); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.icon-btn svg { width: 22px; height: 22px; }
+.icon-btn:hover { background: var(--mark); }
+.icon-btn.mic-live { background: var(--mark); animation: micpulse 1.2s infinite; }
+@keyframes micpulse { 0% { box-shadow: 0 0 0 0 rgba(215,38,61,.55); } 100% { box-shadow: 0 0 0 14px rgba(215,38,61,0); } }
+.send { border: 2px solid var(--ink); background: var(--ink); color: #fff; font-weight: 700; padding: 11px 24px; border-radius: 8px; }
+.send:hover { background: var(--ink-deep); } .send:disabled { opacity: .5; cursor: not-allowed; }
+.voice-open { border: 2px solid var(--ink); background: var(--mark); color: var(--ink); font-weight: 700; padding: 11px 18px; border-radius: 8px; white-space: nowrap; }
+.voice-open:hover { background: #FFD60F; }
+@media (max-width: 640px) { .voice-open { display: none; } .send { padding-inline: 16px; } }
+
+/* ---------- التذييل ---------- */
+.footer { background: var(--ink-deep); color: #E6E9FA; padding: clamp(44px, 6vw, 72px) 0 36px; border-top: 4px solid var(--red); }
+.footer h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.footer .hint { color: #B7BDE6; font-size: .92rem; margin-top: 6px; }
+.team { margin-top: 28px; display: grid; gap: 0; max-width: 780px; }
+.person { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.2); }
+.person:last-child { border-bottom: 1px solid rgba(255,255,255,.2); }
+.person .avatar { border-color: var(--mark); }
+.person .who { flex: 1; min-width: 200px; }
+.person .role { font-size: .9rem; color: var(--mark); font-weight: 600; }
+.person .nm { font-family: var(--display); font-size: 1.35rem; color: #fff; font-weight: 600; line-height: 1.5; }
+.person .pill { color: #fff; border-color: rgba(255,255,255,.7); }
+.person .pill:hover { background: #fff; color: var(--ink-deep); }
+.person .pill.wa { color: #7BE3B1; border-color: #7BE3B1; } .person .pill.wa:hover { background: #7BE3B1; color: var(--ink-deep); }
+.org-line { margin-top: 44px; font-weight: 600; color: #fff; }
+.org-line span { color: #B7BDE6; font-weight: 400; display: block; }
+.tags { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.tags button { background: none; border: 0; padding: 2px 0; color: var(--mark); font-weight: 600; font-size: .92rem; text-decoration: underline; text-decoration-color: rgba(255,225,77,.4); text-underline-offset: 5px; }
+.tags button:hover { text-decoration-color: var(--mark); }
+.legal { margin-top: 32px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.2); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: .85rem; color: #B7BDE6; }
+
+/* ---------- عناصر عائمة ---------- */
+.fab { position: fixed; bottom: 18px; right: 18px; z-index: 40; width: 58px; height: 58px; border-radius: 50%; background: var(--mark); color: var(--ink); border: 3px solid var(--ink); display: flex; align-items: center; justify-content: center; }
+.fab svg { width: 26px; height: 26px; } .fab:hover { background: #FFD60F; }
+#toast-msg { position: fixed; bottom: 20px; left: 20px; z-index: 120; background: var(--ink); color: #fff; border-radius: 8px; border-inline-start: 6px solid var(--mark); padding: 12px 18px; font-weight: 600; font-size: .95rem; transform: translateY(90px); opacity: 0; transition: transform .3s, opacity .3s; max-width: calc(100vw - 40px); }
+#toast-msg.show { transform: none; opacity: 1; }
+#img-modal { position: fixed; inset: 0; z-index: 100; background: rgba(10,14,50,.88); display: flex; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
+#img-modal img { max-height: 90vh; max-width: 100%; border: 3px solid var(--mark); border-radius: 4px; }
+
+/* ---------- وضع المحادثة الصوتية ---------- */
+#voice-modal { position: fixed; inset: 0; z-index: 80; background: var(--ink-deep); color: #fff; display: flex; flex-direction: column; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 32px 32px; }
+.v-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; }
+.v-top b { font-family: var(--display); font-size: 1.15rem; font-weight: 600; }
+.v-close { background: transparent; border: 2px solid rgba(255,255,255,.6); color: #fff; border-radius: 999px; padding: 6px 20px; font-weight: 700; }
+.v-close:hover { background: rgba(255,255,255,.14); }
+.v-main { flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 12px 20px; text-align: center; }
+.orb { position: relative; width: 160px; height: 160px; border-radius: 50%; border: 0; background: var(--paper); color: var(--ink); display: flex; align-items: center; justify-content: center; transition: background .3s, transform .3s; }
+.orb::before, .orb::after { content: ""; position: absolute; inset: -16px; border-radius: 50%; border: 2px solid rgba(255,255,255,.55); opacity: 0; }
+.orb.listening { background: var(--mark); }
+.orb.listening::before { animation: ripple 1.6s infinite; } .orb.listening::after { animation: ripple 1.6s .6s infinite; }
+.orb.thinking { background: transparent; border: 4px dashed var(--mark); animation: spin 2.4s linear infinite; }
+.orb.thinking .bars { opacity: 0; }
+.orb.speaking { background: #fff; animation: pulse 1s ease-in-out infinite; }
+.orb.speaking::before { animation: ripple 1.3s infinite; }
+@keyframes ripple { 0% { transform: scale(.92); opacity: .9; } 100% { transform: scale(1.4); opacity: 0; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.bars { display: flex; align-items: center; gap: 5px; height: 48px; }
+.bars span { width: 6px; height: 12px; border-radius: 3px; background: var(--ink); }
+.orb.listening .bars span, .orb.speaking .bars span { animation: bar .9s ease-in-out infinite; }
+.bars span:nth-child(2) { animation-delay: .1s !important; } .bars span:nth-child(3) { animation-delay: .2s !important; }
+.bars span:nth-child(4) { animation-delay: .3s !important; } .bars span:nth-child(5) { animation-delay: .4s !important; }
+@keyframes bar { 0%, 100% { height: 12px; } 50% { height: 44px; } }
+#voice-state { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 600; line-height: 1.4; }
+#voice-sub { margin-top: 4px; color: #B7BDE6; font-size: .98rem; }
+#voice-user { min-height: 30px; color: var(--mark); font-weight: 600; max-width: 640px; }
+#voice-reply { width: 100%; max-width: 680px; max-height: 190px; overflow-y: auto; text-align: start; background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.25); border-radius: 8px; padding: 14px 18px; font-size: .98rem; line-height: 1.8; }
+#voice-reply ul { list-style: disc; padding-inline-start: 22px; } #voice-reply strong { color: var(--mark); }
+.v-bottom { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 14px 20px 26px; }
+.v-bottom button { background: transparent; border: 2px solid rgba(255,255,255,.55); color: #fff; border-radius: 999px; padding: 8px 20px; font-weight: 600; font-size: .92rem; }
+.v-bottom button:hover { background: rgba(255,255,255,.14); }
+#voice-unsupported { text-align: center; color: #FFB3BC; font-size: .88rem; padding: 0 20px 18px; }
+
+/* ---------- الإعدادات ---------- */
+#settings-modal { position: fixed; inset: 0; z-index: 90; background: rgba(10,14,50,.7); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.settings { background: var(--sheet); border: 2px solid var(--ink); border-radius: 4px; width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto; padding: 24px; }
+.settings-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.settings-head h3 { font-family: var(--display); font-size: 1.35rem; color: var(--ink); font-weight: 600; }
+.settings label { display: block; font-weight: 600; color: var(--ink); margin-bottom: 4px; font-size: .95rem; }
+.settings input[type=password], .settings select { width: 100%; font: inherit; padding: 9px 12px; border: 2px solid var(--ink); border-radius: 6px; background: var(--sheet); margin-bottom: 6px; }
+.settings .help { font-size: .84rem; color: var(--muted); margin-bottom: 16px; line-height: 1.7; }
+.settings input[type=range] { width: 100%; margin-bottom: 16px; accent-color: var(--ink); }
+.settings .row { display: flex; gap: 10px; margin-top: 10px; }
+.settings .save { flex: 1; background: var(--ink); color: #fff; border: 2px solid var(--ink); border-radius: 8px; padding: 10px; font-weight: 700; }
+.settings .test { background: transparent; border: 2px solid var(--ink); color: var(--ink); border-radius: 8px; padding: 10px 18px; font-weight: 700; }
+.x-btn { width: 38px; height: 38px; border: 2px solid var(--ink); border-radius: 50%; background: transparent; font-weight: 700; color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .stamp { opacity: 1; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body id="top">
+
+<!-- الشريط العلوي -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <strong>سفراء البرمجة</strong>
+      <span>توجيه الكمبيوتر المركزي، محافظة الشرقية</span>
+    </a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="#facts">البيانات والمدة</a>
+      <a href="#rules">القواعد السبع</a>
+      <a href="#roles">توزيع الأدوار</a>
+      <a href="#assistant">المساعد الذكي</a>
+      <a href="#team" class="nav-cta">فريق العمل</a>
+    </nav>
+    <button class="menu-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu">القائمة</button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-menu" aria-label="قائمة الهاتف">
+  <a href="#facts">البيانات والمدة</a>
+  <a href="#rules">القواعد السبع</a>
+  <a href="#roles">توزيع الأدوار</a>
+  <a href="#assistant">المساعد الذكي</a>
+  <a href="#team">فريق العمل</a>
+</nav>
+
+<main>
+<!-- الترويسة -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-org"><b>توجيه الكمبيوتر المركزي بمحافظة الشرقية</b> وفريق سفراء التطوير والبرمجة. الصف الثاني الثانوي، نظام البكالوريا المصرية 2026 / 2027.</p>
+      <h1>الدليل الشامل للمشروع البحثي في البرمجة والذكاء الاصطناعي</h1>
+      <p class="hero-lead">كل ما يلزم فريقك لتسليم مشروع محكم: القواعد، والمدة، وتقسيم الأدوار، ومساعد يجيبك كتابةً أو بصوتك.</p>
+      <div class="hero-actions">
+        <button class="btn" onclick="openVoiceMode()">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-14 0m7 7v3m-4 0h8M12 3a3 3 0 00-3 3v5a3 3 0 006 0V6a3 3 0 00-3-3z"/></svg>
+          تحدّث مع المساعد بصوتك
+        </button>
+        <a class="link-u" href="#rules">اقرأ القواعد السبع</a>
+      </div>
+    </div>
+
+    <figure class="qsheet" aria-label="مثال على بداية صحيحة للبحث">
+      <p class="qsheet-label">مثال على بداية صحيحة</p>
+      <p class="qsheet-q">هل يحسّن استخدام أدوات الذكاء الاصطناعي نتائج تعلّم البرمجة لدى طلاب الثانوي؟</p>
+      <p class="qsheet-r">النتيجة: <i></i></p>
+      <p class="qsheet-note">اكتبوا السؤال أولاً، واتركوا النتيجة فارغة حتى ينتهي البحث.</p>
+      <span class="stamp" aria-hidden="true">لا نتائج مسبقة</span>
+    </figure>
+  </div>
+</section>
+
+<!-- البيانات والجدول الزمني -->
+<section class="section solid" id="facts">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>المشروع في سطور</h2>
+      <p>الأرقام التي تحكم عملكم من اليوم الأول حتى التسليم.</p>
+    </div>
+    <div class="facts">
+      <dl class="fact-sheet">
+        <div><dt>الفريق</dt><dd>4 إلى 5 طلاب، ولكل طالب مساهمة فردية واضحة</dd></div>
+        <div><dt>المدة</dt><dd>5 شهور، من 15 نوفمبر 2026 إلى 31 مارس 2027</dd></div>
+        <div><dt>التقييم</dt><dd>15 درجة على 15 معياراً</dd></div>
+        <div><dt>الإشراف</dt><dd>6 مراحل، وجلسة موثقة مع المعلم بعد كل مرحلة</dd></div>
+        <div><dt>التقرير النهائي</dt><dd>من 3000 إلى 5000 كلمة</dd></div>
+      </dl>
+
+      <div class="timeline">
+        <h3>أين نحن من موعد التسليم؟</h3>
+        <p>المؤشر يتحرك مع الوقت الفعلي من 15 نوفمبر 2026 حتى 31 مارس 2027.</p>
+        <div class="ruler" aria-hidden="true">
+          <span class="pin" id="pin">اليوم</span>
+          <div class="ruler-track">
+            <div class="ruler-fill" id="timeline-progress-bar"></div>
+            <div class="ruler-ticks"><span style="flex:16"></span><span style="flex:31"></span><span style="flex:31"></span><span style="flex:28"></span><span style="flex:31"></span></div>
+          </div>
+          <div class="ruler-months"><span style="flex:16">نوفمبر</span><span style="flex:31">ديسمبر</span><span style="flex:31">يناير</span><span style="flex:28">فبراير</span><span style="flex:31">مارس</span></div>
+        </div>
+        <div class="ruler-ends"><span>البداية: 15 نوفمبر 2026</span><span id="progress-label">...</span><span>التسليم: 31 مارس 2027</span></div>
+        <div class="countdown">
+          <strong class="num" id="cd-days">--</strong>
+          <span>يوماً متبقياً</span>
+          <span class="clock num" id="cd-clock" dir="ltr">--:--:--</span>
+        </div>
+        <p class="flex-note">أسبوعان إضافيان للظروف الطارئة فقط وبموافقة المعلم. هذا ليس تمديداً عاماً.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- القواعد -->
+<section class="section" id="rules">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>القواعد السبع الذهبية</h2>
+      <p>الالتزام بها يجنّب الفريق أكثر الأخطاء التي تخصم من الدرجة.</p>
+    </div>
+    <div class="chips" role="group" aria-label="تصفية القواعد">
+      <button class="chip" data-filter="all" aria-pressed="true">الكل (7)</button>
+      <button class="chip" data-filter="team" aria-pressed="false">التنظيم والإشراف</button>
+      <button class="chip" data-filter="methodology" aria-pressed="false">المنهجية والتقرير</button>
+      <button class="chip" data-filter="evaluation" aria-pressed="false">الوقت والتقييم</button>
+    </div>
+    <ul class="ledger" id="rules-grid">
+      <li class="rule" data-category="team">
+        <div class="rule-n">1</div>
+        <div class="rule-b"><h3>تكوين الفريق <small>التنظيم</small></h3><p>يتكون الفريق من <mark>4 إلى 5 طلاب</mark>، ويجب توثيق المساهمة الفردية المحددة لكل طالب داخل المشروع.</p></div>
+      </li>
+      <li class="rule" data-category="evaluation">
+        <div class="rule-n">2</div>
+        <div class="rule-b"><h3>المدة الزمنية <small>الجدول الزمني</small></h3><p><mark>5 شهور</mark> من 15 نوفمبر 2026 إلى 31 مارس 2027، مع مرونة أسبوعين للظروف الطارئة فقط وبموافقة، وليست تمديداً.</p></div>
+      </li>
+      <li class="rule" data-category="evaluation">
+        <div class="rule-n">3</div>
+        <div class="rule-b"><h3>التقييم والدرجات <small>معايير الدرجة</small></h3><p><mark>15 درجة</mark> موزعة على 15 معياراً. يعتمد التقييم على جودة المحتوى العلمي والمنهجية البحثية، وليس على الشكل الجمالي وحده.</p></div>
+      </li>
+      <li class="rule" data-category="team">
+        <div class="rule-n">4</div>
+        <div class="rule-b"><h3>الإشراف الدوري <small>المتابعة</small></h3><p>المشروع مقسم إلى <mark>6 مراحل متتابعة</mark>، وتُعقد مع نهاية كل مرحلة جلسة إشرافية موثقة رسمياً مع معلم المادة.</p></div>
+      </li>
+      <li class="rule" data-category="methodology">
+        <div class="rule-n">5</div>
+        <div class="rule-b"><h3>حجم التقرير النهائي <small>التوثيق</small></h3><p>يتراوح حجم التقرير بين <mark>3000 و5000 كلمة</mark>، شاملاً كل المحاور والمراجع العلمية.</p></div>
+      </li>
+      <li class="rule" data-category="methodology">
+        <div class="rule-n">6</div>
+        <div class="rule-b"><h3>نقطة البداية الصحيحة <small>المنهج العلمي</small></h3><p>صيغوا مشكلة بحثية قابلة للاختبار وسؤالاً رئيسياً محدداً. <mark>ممنوع كتابة النتائج مسبقاً</mark> قبل إجراء البحث الفعلي.</p></div>
+      </li>
+      <li class="rule" data-category="methodology">
+        <div class="rule-n">7</div>
+        <div class="rule-b"><h3>النماذج التدريبية وأدوات البحث <small>مرونة التطبيق</small></h3><p>تصميم الاستبيان أو صفحة الويب مثالان للتدريب وليسا شرطاً في كل مشروع. يمكن للفريق اختيار <mark>المنهج الوصفي أو الوثائقي</mark> بما يناسب السؤال البحثي وبموافقة المعلم.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- الأدوار -->
+<section class="section solid" id="roles">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>سؤال رئيسي واحد وأدوار متكاملة</h2>
+      <p>العمل الجماعي ليس خمسة أبحاث منفصلة، بل إجابة واحدة تتوزع محاورها على أعضاء الفريق. اختاروا طالباً لتروا مهامه.</p>
+    </div>
+
+    <div class="board-q"><small>مثال للسؤال الرئيسي</small><strong>الذكاء الاصطناعي بين الفائدة والمسؤولية</strong></div>
+    <div class="axes" id="roles-tabs" role="tablist" aria-label="محاور البحث"></div>
+    <article class="axis-detail" id="role-detail-card" role="tabpanel" aria-live="polite"></article>
+
+    <p class="note"><strong>إذا كان الفريق 4 طلاب:</strong> يُدمج محوران من المحاور الخمسة بعد موافقة المعلم المشرف، حتى يبقى البحث شاملاً.</p>
+  </div>
+</section>
+
+<!-- المساعد -->
+<section class="section" id="assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>اسأل المساعد، كتابةً أو بصوتك</h2>
+      <p>يعرف ضوابط المشروع كما وردت في هذا الدليل. اكتب سؤالك أو تحدّث، وسيجيبك بالعربية. للمحادثة التفاعلية الكاملة أضف مفتاح Gemini من الإعدادات.</p>
+    </div>
+
+    <div class="assistant">
+      <div class="a-bar">
+        <div>
+          <h3>مستشار سفراء البرمجة الذكي</h3>
+          <p>خبير ضوابط المشروع البحثي، الصف الثاني الثانوي 2026 / 2027</p>
+          <span id="assistant-status" class="assistant-status" role="status">وضع الدليل المحلي</span>
+        </div>
+        <div class="a-tools">
+          <button class="tool" id="autospeak-btn" onclick="toggleAutoSpeak()" title="قراءة الردود بصوت مسموع"><span id="autospeak-icon">🔊</span> <span id="autospeak-text">القراءة: تعمل</span></button>
+          <button class="tool" onclick="openSettings()">الإعدادات</button>
+          <button class="tool" onclick="clearChat()">محادثة جديدة</button>
+        </div>
+      </div>
+
+      <div class="quick">
+        <button onclick="sendQuickPrompt('اقترح لي 3 أسئلة بحثية قابلة للاختبار في مجال الذكاء الاصطناعي وفق القاعدة الذهبية السادسة.')">اقترح لي سؤالاً بحثياً قابلاً للاختبار</button>
+        <button onclick="sendQuickPrompt('كيف نوزع الأدوار والمحاور الخمسة إذا كان عدد فريقنا 4 طلاب فقط؟')">كيف نوزع الأدوار إذا كنا 4 طلاب؟</button>
+        <button onclick="sendQuickPrompt('ما هي شروط التقييم والـ 15 معياراً وكيف نضمن الحصول على الـ 15 درجة كاملة؟')">ما شروط التقييم والـ 15 معياراً؟</button>
+        <button onclick="sendQuickPrompt('ساعدني في وضع خطة عمل تفصيلية للطالب الأول (عبد الرحمن محمد السيد) في محور التطور التقني وحدود القدرات.')">ساعدني في خطة بحث الطالب الأول</button>
+      </div>
+
+      <div id="chat-messages" aria-live="polite">
+        <div class="msg msg-ai">
+          <div class="msg-av">AI</div>
+          <div class="bubble">
+            <p><strong>أهلاً بك في مساعد المشروع البحثي.</strong></p>
+            <p>أساعدك وفريقك في صياغة السؤال البحثي وتقسيم المهام ومراجعة مطابقة فكرتكم للقواعد السبع.</p>
+            <p>اضغط زر الميكروفون وتحدّث، أو افتح المحادثة الصوتية لنتحاور بحرية.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="voice-status-bar" class="hidden"><span id="voice-status-text">أستمع إليك...</span></div>
+
+      <form id="chat-form" onsubmit="handleChatSubmit(event)">
+        <button type="button" id="mic-btn" class="icon-btn" onclick="toggleMic()" aria-label="تحدّث بصوتك" title="تحدّث بصوتك">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-14 0m7 7v3m-4 0h8M12 3a3 3 0 00-3 3v5a3 3 0 006 0V6a3 3 0 00-3-3z"/></svg>
+        </button>
+        <input type="text" id="chat-input" placeholder="اكتب سؤالك أو اضغط الميكروفون وتحدّث" autocomplete="off" required aria-label="سؤالك">
+        <button type="button" class="voice-open" onclick="openVoiceMode()">محادثة صوتية</button>
+        <button type="submit" id="chat-submit-btn" class="send">إرسال</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- التذييل -->
+<footer class="footer" id="team">
+  <div class="wrap">
+    <h2>فريق الإعداد والتنفيذ</h2>
+    <p class="hint">ضع الصورتين باسم abdo.jpeg وmohamed.jpeg بجانب الصفحة ليظهرا بوضوح. اضغط على الصورة لتكبيرها، وعلى الرقم للاتصال.</p>
+
+    <ul class="team">
+      <li class="person">
+        <button class="avatar s88" onclick="openImage(this.querySelector('img').src)" aria-label="تكبير صورة عبد الرحمن محمد السيد">
+          <img src="abdo.jpeg" alt="عبد الرحمن محمد السيد" loading="lazy" decoding="async" onerror="avatarFallback(this,'عر')">
+        </button>
+        <div class="who">
+          <span class="role">مؤسس الموقع والطالب الأول</span>
+          <div class="nm">عبد الرحمن محمد السيد</div>
+        </div>
+        <div class="contact" style="margin:0">
+          <a class="pill num" dir="ltr" href="tel:+201212770940">01212770940</a>
+          <a class="pill wa" href="https://wa.me/201212770940" target="_blank" rel="noopener">واتساب</a>
+        </div>
+      </li>
+      <li class="person">
+        <button class="avatar s88" onclick="openImage(this.querySelector('img').src)" aria-label="تكبير صورة محمد أحمد السيد">
+          <img src="mohamed.jpeg" alt="محمد أحمد السيد" loading="lazy" decoding="async" onerror="avatarFallback(this,'مأ')">
+        </button>
+        <div class="who">
+          <span class="role">الطالب الثاني</span>
+          <div class="nm">محمد أحمد السيد</div>
+        </div>
+        <div class="contact" style="margin:0">
+          <a class="pill num" dir="ltr" href="tel:+201224281877">01224281877</a>
+          <a class="pill wa" href="https://wa.me/201224281877" target="_blank" rel="noopener">واتساب</a>
+        </div>
+      </li>
+    </ul>
+
+    <p class="org-line">توجيه الكمبيوتر المركزي بمحافظة الشرقية<span>فريق سفراء التطوير والبرمجة بمحافظة الشرقية</span></p>
+    <div class="tags">
+      <button onclick="copyHashtag('#توجيه_الكمبيوتر_المركزي_بالشرقية')">#توجيه_الكمبيوتر_المركزي_بالشرقية</button>
+      <button onclick="copyHashtag('#سفراء_التطوير_والبرمجة')">#سفراء_التطوير_والبرمجة</button>
+      <button onclick="copyHashtag('#البكالوريا_المصرية')">#البكالوريا_المصرية</button>
+      <button onclick="copyHashtag('#البرمجة_والذكاء_الاصطناعي')">#البرمجة_والذكاء_الاصطناعي</button>
+    </div>
+    <div class="legal"><p>مع أطيب التمنيات لجميع أبنائنا الطلاب بالتوفيق والتميز.</p><p>العام الدراسي 2026 / 2027، الصف الثاني الثانوي</p></div>
+  </div>
+</footer>
+
+<button class="fab" onclick="openVoiceMode()" aria-label="تحدث مع المساعد الصوتي" title="تحدث مع المساعد الصوتي">
+  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-14 0m7 7v3m-4 0h8M12 3a3 3 0 00-3 3v5a3 3 0 006 0V6a3 3 0 00-3-3z"/></svg>
+</button>
+
+<div id="toast-msg" role="status"><span id="toast-text">تم</span></div>
+
+<div id="img-modal" class="hidden" onclick="closeImage()"><img id="img-modal-src" src="" alt="صورة مكبرة"></div>
+
+<!-- وضع المحادثة الصوتية -->
+<div id="voice-modal" class="hidden" role="dialog" aria-modal="true" aria-label="المحادثة الصوتية">
+  <div class="v-top"><b>المحادثة الصوتية المباشرة</b><button class="v-close" onclick="closeVoiceMode()">إنهاء</button></div>
+  <div class="v-main">
+    <button id="voice-orb" class="orb" onclick="orbPressed()" aria-label="ابدأ أو أوقف الاستماع"><div class="bars"><span></span><span></span><span></span><span></span><span></span></div></button>
+    <div>
+      <p id="voice-state">اضغط الدائرة وابدأ الحديث</p>
+      <p id="voice-sub">أستمع إليك وأجيبك صوتياً، ثم أعود للاستماع تلقائياً.</p>
+    </div>
+    <div id="voice-user"></div>
+    <div id="voice-reply" class="hidden"></div>
+  </div>
+  <div class="v-bottom">
+    <button onclick="stopSpeaking()">إيقاف الصوت</button>
+    <button id="handsfree-btn" onclick="toggleHandsFree()">الاستماع التلقائي: يعمل</button>
+    <button onclick="openSettings()">الإعدادات</button>
+  </div>
+  <p id="voice-unsupported" class="hidden">متصفحك لا يدعم التعرف على الصوت. استخدم Google Chrome أو Microsoft Edge.</p>
+</div>
+
+<!-- الإعدادات -->
+<div id="settings-modal" class="hidden" onclick="if(event.target===this)closeSettings()">
+  <div class="settings" role="dialog" aria-modal="true" aria-label="إعدادات المساعد">
+    <div class="settings-head"><h3>إعدادات المساعد الذكي</h3><button class="x-btn" onclick="closeSettings()" aria-label="إغلاق">✕</button></div>
+
+    <label for="api-key-input">مفتاح Gemini API (اختياري)</label>
+    <input id="api-key-input" type="password" dir="ltr" placeholder="AIza...">
+    <p class="help">بدون مفتاح يستخدم المساعد دليل المشروع المحلي. يُحفظ المفتاح في هذا المتصفح، ويصل إلى المتصفح أثناء الاتصال؛ لا تضع مفتاحاً مشتركاً في صفحة عامة. للنشر العام استخدم خدمة وسيطة على الخادم.</p>
+
+    <label for="voice-select">صوت القراءة</label>
+    <select id="voice-select"></select>
+
+    <label for="rate-input">سرعة القراءة: <span id="rate-val">1.0</span></label>
+    <input id="rate-input" type="range" min="0.7" max="1.4" step="0.1" value="1">
+
+    <label for="lang-select">لغة التعرف على الكلام</label>
+    <select id="lang-select">
+      <option value="ar-EG">العربية (مصر)</option>
+      <option value="ar-SA">العربية (السعودية)</option>
+      <option value="en-US">English (US)</option>
+    </select>
+
+    <div class="row"><button class="save" onclick="saveSettings()">حفظ</button><button class="test" onclick="testVoice()">تجربة الصوت</button></div>
+    
+  </div>
+</div>
+
+<script>
+// ============ أدوات مساعدة ============
+function safeGet(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
+function safeSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function escapeHTML(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function toast(msg) {
+  const t = document.getElementById('toast-msg');
+  document.getElementById('toast-text').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => t.classList.remove('show'), 2600);
+}
+function avatarFallback(img, label) {
+  img.onerror = null;
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><rect width='180' height='180' fill='#1B2578'/><circle cx='90' cy='90' r='78' fill='none' stroke='#FFE14D' stroke-width='3'/><text x='90' y='108' font-size='48' text-anchor='middle' fill='#FFE14D' font-family='sans-serif' font-weight='700' direction='rtl'>${label}</text></svg>`;
+  img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+}
+
+// ============ 1. بيانات الأدوار ============
+const rolesData = [
+  { n: 1, roleTitle: "الطالب الأول", studentName: "عبد الرحمن محمد السيد", avatar: "abdo.jpeg", phone: "01212770940",
+    short: "التطور التقني", axisTitle: "التطور التقني وحدود القدرات",
+    description: "يتتبع هذا المحور التطور التاريخي والتقني لنماذج الذكاء الاصطناعي الحديثة، ويحلل قدراتها الفعلية وحدودها التقنية التي لا تستطيع تجاوزها حالياً.",
+    deliverables: ["توثيق المراجع العلمية والتقنية الموثوقة حول تطور تقنيات الذكاء الاصطناعي.", "مراجعة فنية دقيقة لقدرات النماذج الحالية وحدودها البرمجية والحسابية.", "ملخص تنفيذي يمهد لبقية المحاور ويحدد الإطار المفاهيمي."] },
+  { n: 2, roleTitle: "الطالب الثاني", studentName: "محمد أحمد السيد", avatar: "mohamed.jpeg", phone: "01224281877",
+    short: "التطبيقات", axisTitle: "التطبيقات في الصحة والتعليم والنقل",
+    description: "يدرس هذا المحور الاستخدامات الواقعية للذكاء الاصطناعي في ثلاثة قطاعات حيوية: الرعاية الصحية، والتعليم، وأنظمة النقل الذكي.",
+    deliverables: ["مقارنة تحليلية بين أبرز التطبيقات الذكية في الصحة والتعليم والنقل.", "تحديد الشروط الفنية والتشغيلية اللازمة لاستخدامها بأمان وفعالية.", "أمثلة تطبيقية توضح القيمة المضافة والتحديات الميدانية لكل قطاع."] },
+  { n: 3, roleTitle: "الطالب الثالث", studentName: "التأثير الاقتصادي والوظائف",
+    short: "الاقتصاد", axisTitle: "التأثير على الصناعة والمال والوظائف",
+    description: "يدرس هذا المحور التحولات التي أحدثتها الأتمتة والذكاء الاصطناعي في القطاعات الصناعية والأسواق المالية ومستقبل الوظائف.",
+    deliverables: ["تحليل دراسات وإحصاءات موثقة عن أثر الذكاء الاصطناعي على الإنتاجية وسوق العمل.", "رصد التحديات الاقتصادية والمهارات المطلوبة لوظائف المستقبل.", "قراءة متوازنة بين الفرص الاستثمارية ومخاطر إحلال الوظائف التقليدية."] },
+  { n: 4, roleTitle: "الطالب الرابع", studentName: "التحيز والخصوصية والشفافية",
+    short: "الأخلاقيات", axisTitle: "التحيز والخصوصية والشفافية",
+    description: "يناقش هذا المحور الأبعاد الأخلاقية لتدريب الخوارزميات، وحماية بيانات المستخدمين، وضمان نزاهة القرارات الآلية وشفافيتها.",
+    deliverables: ["مقارنة حالات واقعية توضح التحيز الخوارزمي وانتهاك الخصوصية.", "جمع الأدلة الأخلاقية والمعايير المهنية التي تضمن الشفافية والمساءلة.", "اقتراح ضوابط أخلاقية تقلل المخاطر المجتمعية للأنظمة الذكية."] },
+  { n: 5, roleTitle: "الطالب الخامس", studentName: "التشريعات والمبادئ المنظمة",
+    short: "التشريعات", axisTitle: "التشريعات والمبادئ المنظمة",
+    description: "يستعرض هذا المحور الأطر القانونية والمبادئ الدولية والوطنية المنظمة لتطوير الذكاء الاصطناعي واستخدامه، ويرصد الفجوات التشريعية القائمة.",
+    deliverables: ["جدول مقارن بأبرز النصوص القانونية والمبادئ العالمية المنظمة للذكاء الاصطناعي.", "تحليل نقاط القصور والثغرات التشريعية أمام التطور التقني المتسارع.", "توصيات ختامية تربط بين الفائدة التقنية والمسؤولية القانونية."] }
+];
+
+function avatarHTML(role, size) {
+  const initials = role.n === 1 ? 'عر' : role.n === 2 ? 'مأ' : String(role.n);
+  return `<span class="avatar ${size}"><img src="${role.avatar}" alt="${escapeHTML(role.studentName)}" loading="lazy" decoding="async" onerror="avatarFallback(this,'${initials}')"></span>`;
+}
+
+function buildAxes() {
+  const box = document.getElementById('roles-tabs');
+  box.innerHTML = rolesData.map((r, i) => `
+    <button class="axis" role="tab" id="axis-${i}" aria-selected="${i === 0}" aria-controls="role-detail-card" onclick="selectAxis(${i})">
+      <span class="a-top">${r.avatar ? avatarHTML(r, 's44') : `<span class="idx">${r.n}</span>`}<span class="a-who">${r.roleTitle}</span></span>
+      <span class="a-name">${r.studentName}</span>
+      <span class="a-axis">${r.short}</span>
+    </button>`).join('');
+}
+
+function selectAxis(i) {
+  const r = rolesData[i];
+  document.querySelectorAll('.axis').forEach((b, k) => b.setAttribute('aria-selected', String(k === i)));
+  const head = r.avatar ? avatarHTML(r, 's64') : `<span class="idx" style="width:64px;height:64px;font-size:1.5rem">${r.n}</span>`;
+  const contact = r.phone ? `<div class="contact">
+      <a class="pill num" dir="ltr" href="tel:+2${r.phone}">${r.phone}</a>
+      <a class="pill wa" href="https://wa.me/2${r.phone}" target="_blank" rel="noopener">واتساب</a></div>` : '';
+  document.getElementById('role-detail-card').innerHTML = `
+    <div>
+      <div class="d-head">${head}<div><small>${r.roleTitle}</small><strong>${r.studentName}</strong></div></div>
+      <h3>المحور: ${r.axisTitle}</h3>
+      <p class="desc">${r.description}</p>
+      ${contact}
+    </div>
+    <div class="deliver">
+      <h4>المهام والمخرجات المطلوب توثيقها</h4>
+      <ul>${r.deliverables.map(d => `<li><span>${d}</span></li>`).join('')}</ul>
+    </div>`;
+}
+
+// ============ 2. عرض الصورة ============
+function openImage(src) { document.getElementById('img-modal-src').src = src; document.getElementById('img-modal').classList.remove('hidden'); }
+function closeImage() { document.getElementById('img-modal').classList.add('hidden'); }
+document.addEventListener('click', e => {
+  const a = e.target.closest('.avatar');
+  if (a && !a.matches('button') && !a.closest('.axis')) { const im = a.querySelector('img'); if (im) openImage(im.src); }
+});
+
+// ============ 3. تصفية القواعد ============
+document.querySelectorAll('.chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    document.querySelectorAll('#rules-grid .rule').forEach(li => { li.style.display = (f === 'all' || li.dataset.category === f) ? '' : 'none'; });
+  });
+});
+
+// ============ 4. الجدول الزمني ============
+function updateTimeline() {
+  const start = new Date('2026-11-15T00:00:00').getTime();
+  const end = new Date('2027-03-31T23:59:59').getTime();
+  const now = Date.now();
+  const total = end - start;
+  const elapsed = Math.max(0, Math.min(total, now - start));
+  const pct = (elapsed / total) * 100;
+  document.getElementById('timeline-progress-bar').style.width = pct + '%';
+  document.getElementById('pin').style.insetInlineStart = pct + '%';
+  document.getElementById('progress-label').textContent = `انقضى ${Math.round(pct)}% من المدة`;
+  const rem = Math.max(0, end - now);
+  document.getElementById('cd-days').textContent = Math.floor(rem / 86400000);
+  const p = n => String(n).padStart(2, '0');
+  document.getElementById('cd-clock').textContent = `${p(Math.floor((rem % 86400000) / 3600000))}:${p(Math.floor((rem % 3600000) / 60000))}:${p(Math.floor((rem % 60000) / 1000))}`;
+}
+
+// ============ 5. نسخ الوسوم ============
+function copyHashtag(tag) {
+  const done = () => toast('تم نسخ الوسم: ' + tag);
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(tag).then(done).catch(() => legacyCopy(tag, done));
+  else legacyCopy(tag, done);
+}
+function legacyCopy(text, cb) {
+  const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta); cb();
+}
+
+// ============ 6. قائمة الهاتف ============
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => { const o = mobileMenu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(o)); });
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+
+// ============ 7. المساعد الذكي (نص) ============
+const SYSTEM_PROMPT = `أنت «مستشار سفراء البرمجة الذكي»، مساعد أكاديمي لطلاب الصف الثاني الثانوي بنظام البكالوريا المصرية للعام 2026/2027 في محافظة الشرقية. أجب بالعربية الواضحة والمبسطة، وكن عملياً ومشجعاً ومختصراً.
+
+مرجع المشروع الثابت:
+1) الفريق من 4 إلى 5 طلاب، مع توثيق مساهمة كل طالب.
+2) المدة من 15 نوفمبر 2026 إلى 31 مارس 2027. توجد مرونة أسبوعين للظروف الطارئة فقط وبموافقة المعلم، وليست تمديداً عاماً.
+3) التقييم 15 درجة موزعة على 15 معياراً؛ الجودة العلمية والمنهجية أهم من الشكل وحده.
+4) ست مراحل، ومع نهاية كل مرحلة جلسة إشراف موثقة مع المعلم.
+5) التقرير النهائي بين 3000 و5000 كلمة.
+6) يبدأ البحث بمشكلة قابلة للاختبار وسؤال محدد. لا تكتب النتائج قبل جمع الأدلة وتحليلها.
+7) الاستبيان وصفحة الويب نموذجان تدريبيان وليسا إلزاميين. يمكن اختيار المنهج الوصفي أو الوثائقي بما يناسب السؤال وبموافقة المعلم.
+
+محاور الفريق المقترحة لسؤال رئيسي واحد مثل «الذكاء الاصطناعي بين الفائدة والمسؤولية»:
+- الطالب الأول، ومثاله عبد الرحمن محمد السيد: التطور التقني وحدود القدرات، ومراجعه ومراجعته الفنية وملخصه.
+- الطالب الثاني، ومثاله محمد أحمد السيد: تطبيقات الذكاء الاصطناعي في الصحة والتعليم والنقل.
+- الطالب الثالث: أثر الذكاء الاصطناعي على الصناعة والمال والوظائف.
+- الطالب الرابع: التحيز والخصوصية والشفافية.
+- الطالب الخامس: التشريعات والمبادئ المنظمة.
+إذا كان الفريق من أربعة طلاب، يدمج الفريق محورين بعد موافقة المعلم، مع بقاء مساهمة كل طالب واضحة.
+
+طريقة العمل:
+- ابدأ بإجابة السؤال مباشرة، ثم اعرض خطوات أو مثالاً مناسباً. استخدم عناوين قصيرة ونقاطاً قليلة؛ فالرد قد يُقرأ بصوت مسموع.
+- عند مراجعة فكرة بحثية، اذكر ما يصلح فيها، وما يحتاج تحديداً، ثم اقترح صياغة قابلة للاختبار وحدد طريقة جمع بيانات ممكنة. لا تفترض نتائج.
+- لا تخترع معايير تقييم تفصيلية أو أسماء المراحل الست أو تواريخ فرعية أو مراجع أو روابط. الدليل لا يذكر تفاصيلها؛ وضح ذلك واطلب الرجوع للمعلم أو المصدر الرسمي.
+- ميّز بوضوح بين قاعدة واردة في الدليل وبين اقتراح منك. إذا نقصت معلومات السؤال، اسأل سؤالاً توضيحياً واحداً فقط.
+- في المسائل الطبية أو القانونية أو المالية، قدّم شرحاً تعليمياً عاماً فقط ووجّه إلى مختص أو مصدر رسمي عند الحاجة.
+- إذا كان السؤال خارج المشروع، أجب بإيجاز حين تستطيع، ووضّح حدود معرفتك في المعلومات الحديثة بدلاً من التخمين.`;
+
+const GEMINI_MODEL = 'gemini-3.8-flash';
+let chatHistory = [];
+let isGenerating = false;
+
+function formatAIResponse(text) {
+  const lines = escapeHTML(text).split('\n');
+  let html = '', inList = false;
+  for (const raw of lines) {
+    let line = raw.trim().replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    const li = line.match(/^(?:[-•*]|\d+[.)])\s+(.*)$/);
+    if (li) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${li[1]}</li>`;
+    } else {
+      if (inList) { html += '</ul>'; inList = false; }
+      if (!line) continue;
+      const h = line.match(/^#{1,4}\s+(.*)$/);
+      html += h ? `<p><strong>${h[1]}</strong></p>` : `<p>${line}</p>`;
+    }
+  }
+  if (inList) html += '</ul>';
+  return html;
+}
+function scrollChat() { const c = document.getElementById('chat-messages'); c.scrollTop = c.scrollHeight; }
+
+function appendMessage(role, content, local = false) {
+  const box = document.getElementById('chat-messages');
+  const wrap = document.createElement('div');
+  if (role === 'user') {
+    wrap.className = 'msg msg-user';
+    wrap.innerHTML = `<div class="msg-av">أنت</div><div class="bubble">${escapeHTML(content)}</div>`;
+  } else {
+    wrap.className = 'msg msg-ai';
+    wrap.innerHTML = `<div class="msg-av">AI</div><div class="bubble">${formatAIResponse(content)}${local ? '<small class="reply-mode">إجابة من دليل المشروع المحلي</small>' : '<small class="reply-mode">إجابة Gemini</small>'}<button class="listen" type="button">استمع إلى الرد</button></div>`;
+    wrap.querySelector('.listen').addEventListener('click', () => speakText(content));
+  }
+  box.appendChild(wrap); scrollChat();
+  return wrap;
+}
+function showTyping() {
+  const box = document.getElementById('chat-messages');
+  const w = document.createElement('div');
+  w.id = 'typing-indicator'; w.className = 'msg msg-ai';
+  w.innerHTML = '<div class="msg-av">AI</div><div class="bubble typing"><i></i><i></i><i></i></div>';
+  box.appendChild(w); scrollChat();
+}
+function hideTyping() { const t = document.getElementById('typing-indicator'); if (t) t.remove(); }
+
+// إجابات مدمجة عند عدم وجود مفتاح API أو فشل الاتصال
+function localAnswer(q) {
+  const s = q.toLowerCase().replace(/[ً-ْ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي');
+  const has = (...w) => w.some(x => s.includes(x));
+  if (has('4 طلاب', 'اربعة', 'اربع طلاب')) return `**توزيع مقترح لفريق من 4 طلاب:**\n- احتفظوا بسؤال بحثي رئيسي واحد، واجعلوا مساهمة كل طالب محددة وموثقة.\n- وزّعوا المحاور على أربعة أعضاء، وادمجوا محورين مترابطين في دور واحد بعد موافقة المعلم.\n- اقتراح مناسب: دمج التحيز والخصوصية والشفافية مع التشريعات؛ فالمحوران يتناولان ضوابط الاستخدام.\n- هذا اقتراح تنظيمي وليس توزيعاً إلزامياً.`;
+  if (has('تحية', 'السلام عليكم', 'مرحبا', 'اهلا', 'ازيك')) return `أهلاً بك! أستطيع مساعدتك في سؤال البحث، خطة الفريق، توزيع الأدوار، قواعد المشروع، أو مراجعة فكرة قبل عرضها على المعلم. ما الذي تعمل عليه الآن؟`;
+  if (has('تقييم', 'درجة', 'درجات', 'معيار', 'معايير')) return `**التقييم في الدليل:** 15 درجة موزعة على 15 معياراً.\n- يركز التقييم على جودة المحتوى والمنهجية، وليس الشكل وحده.\n- اهتموا بسؤال قابل للاختبار، ومساهمة موثقة لكل طالب، ومراجع، والتزام بالإشراف والمراحل، وحجم التقرير المطلوب.\n- تفاصيل المعايير الخمسة عشر غير واردة في هذا الدليل؛ اطلبوا قائمتها من المعلم ولا تكتبوها بالتخمين.`;
+  if (has('الطالب الثاني', 'محمد')) return `**خطة محمد أحمد السيد: التطبيقات في الصحة والتعليم والنقل**\n- اختر مثالاً واقعياً واحداً لكل قطاع، وحدد المشكلة التي يحاول التطبيق حلها.\n- قارن بين الفائدة، والبيانات المطلوبة، والدقة، والمخاطر، وشروط الاستخدام الآمن.\n- دوّن مصدر كل معلومة، ثم لخّص المقارنة في جدول.\n- لا تفترض أن التطبيق ناجح؛ اعرض الأدلة والقيود التي تجدها.`;
+  if (has('الصحة', 'التعليم', 'النقل')) return `**مقارنة التطبيقات:**
+- اختر مثالاً موثقاً لكل قطاع وحدد المشكلة التي يعالجها.
+- قارن الفائدة والبيانات المطلوبة والدقة والمخاطر وشروط الاستخدام الآمن.
+- سجّل مصدر كل معلومة ولا تفترض نجاح التطبيق قبل مراجعة الأدلة.`;
+  if (has('الطالب الاول', 'عبد الرحمن', 'التطور التقني')) return `**خطة عبد الرحمن محمد السيد: التطور التقني وحدود القدرات**\n- اجمع مصادر موثوقة تشرح تطور التقنية المختارة ومبدأ عملها.\n- قارن قدراتها بما لا تستطيع فعله أو ما قد تخطئ فيه، مع أمثلة موثقة.\n- اكتب ملخصاً يشرح المصطلحات الأساسية ويمهد لبقية محاور الفريق.\n- اربط كل ادعاء بمصدر، ولا تضع نتائج قبل تحليل الأدلة.`;
+  if (has('سؤال', 'اقترح', 'فكرة', 'مشكلة', 'بحثي')) return `**أمثلة لأسئلة قابلة للبحث:**\n- ما أثر استخدام أداة ذكاء اصطناعي محددة في أداء طلاب الصف الثاني الثانوي في مهمة برمجية محددة؟\n- ما أكثر مخاوف الخصوصية التي يذكرها طلاب الصف الثاني الثانوي عند استخدام تطبيقات الذكاء الاصطناعي؟\n- كيف تختلف فوائد ومخاطر تطبيقات الذكاء الاصطناعي بين قطاعي التعليم والصحة؟\n\nحدّدوا الفئة أو التطبيق ومؤشر القياس قبل اعتماد السؤال. هذه صيغ مقترحة وليست نتائج؛ اعرضوها على المعلم.`;
+  if (has('مدة', 'موعد', 'تسليم', 'متى', 'شهور')) return `**المدة المحددة في الدليل:** من 15 نوفمبر 2026 إلى 31 مارس 2027. توجد مرونة أسبوعين للظروف الطارئة فقط وبموافقة المعلم، وليست تمديداً عاماً.`;
+  if (has('كلمة', 'تقرير', 'حجم')) return `**حجم التقرير النهائي:** من 3000 إلى 5000 كلمة. قسّموا الكتابة بين محاور الفريق، واتفقوا على أسلوب موحد للتوثيق، ثم راجعوا الحجم النهائي مع المعلم.`;
+  if (has('مراحل', 'اشراف', 'جلسة')) return `**الإشراف:** المشروع يضم ست مراحل، ومع نهاية كل مرحلة جلسة إشراف موثقة مع المعلم. الدليل لا يذكر أسماء المراحل أو مواعيدها؛ اطلبوا الجدول المعتمد من المعلم.`;
+  if (has('استبيان', 'ويب', 'منهج', 'وصفي', 'وثائقي')) return `**اختيار أداة البحث:** الاستبيان وصفحة الويب مثالان تدريبيان وليسا إلزاميين. اختاروا المنهج الوصفي أو الوثائقي بما يجيب عن سؤالكم، واعتمدوا الاختيار مع المعلم قبل جمع البيانات.`;
+  if (has('قواعد', 'ضوابط', 'القواعد السبع')) return `**القواعد السبع الذهبية:**\n- فريق من 4 إلى 5 طلاب مع مساهمة فردية موثقة.\n- المدة من 15 نوفمبر 2026 إلى 31 مارس 2027، ومرونة أسبوعين للطوارئ بموافقة المعلم فقط.\n- 15 درجة موزعة على 15 معياراً.\n- ست مراحل وجلسات إشراف موثقة.\n- تقرير من 3000 إلى 5000 كلمة.\n- مشكلة قابلة للاختبار وسؤال محدد؛ لا نتائج مسبقة.\n- الاستبيان وصفحة الويب أمثلة تدريبية وليستا إلزاميتين.`;
+  if (has('ادوار', 'توزيع', 'محاور', 'فريق')) return `**المحاور الخمسة المقترحة:**\n- الأول: التطور التقني وحدود القدرات.\n- الثاني: التطبيقات في الصحة والتعليم والنقل.\n- الثالث: الأثر على الصناعة والمال والوظائف.\n- الرابع: التحيز والخصوصية والشفافية.\n- الخامس: التشريعات والمبادئ المنظمة.\n\nاجعلوها أجزاء من إجابة واحدة، ووثّقوا مسؤولية كل طالب. فريق الأربعة يدمج محورين بعد موافقة المعلم.`;
+  if (has('مصادر', 'مراجع', 'توثيق')) return `**للعثور على مصادر موثوقة:**\n- ابدأوا بالجهات الحكومية أو الجامعات أو المؤسسات العلمية المعروفة.\n- سجّلوا عنوان المصدر والجهة والتاريخ والرابط وتاريخ الاطلاع.\n- استخدموا المصدر الأصلي للأرقام والدراسات، ولا تنسبوا للمصدر كلاماً لم يذكره.\n- الدليل لا يفرض نمط توثيق محدداً؛ اسألوا المعلم عن النمط المطلوب.`;
+  return `أنا في وضع الدليل المحلي حالياً، لذا أجيب عن قواعد المشروع ومحاوره فقط. أستطيع مساعدتك في سؤال البحث، خطة عبد الرحمن أو محمد، الأدوار، المدة، التقييم، التقرير، أو أدوات البحث. للمحادثة التوليدية الكاملة أضف مفتاح Gemini من الإعدادات.`;
+}
+
+async function askGemini(text) {
+  const key = safeGet('gemini_key', '');
+  if (!key) { refreshAssistantStatus('وضع الدليل المحلي'); return { text: localAnswer(text), local: true }; }
+  chatHistory.push({ role: 'user', parts: [{ text }] });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 45000);
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
+      body: JSON.stringify({ systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] }, contents: chatHistory.slice(-16), generationConfig: { temperature: 0.45, maxOutputTokens: 1200 } }),
+      signal: controller.signal
+    });
+    if (!res.ok) {
+      let detail = '';
+      try { detail = (await res.json())?.error?.message || ''; } catch (e) {}
+      throw new Error(`HTTP ${res.status}${detail ? ': ' + detail : ''}`);
+    }
+    const data = await res.json();
+    const reply = data?.candidates?.[0]?.content?.parts?.map(p => p.text).join('') || '';
+    if (!reply) throw new Error('empty');
+    chatHistory.push({ role: 'model', parts: [{ text: reply }] });
+    refreshAssistantStatus('Gemini متصل');
+    return { text: reply, local: false };
+  } catch (e) {
+    chatHistory.pop();
+    const reason = e.name === 'AbortError' ? 'انتهت مهلة الاتصال' : e.message.includes('HTTP 403') || e.message.includes('HTTP 400') ? 'تحقق من صلاحية مفتاح Gemini' : e.message.includes('HTTP 429') ? 'تجاوزت حد الطلبات مؤقتاً' : 'تعذر الاتصال بـ Gemini';
+    refreshAssistantStatus('Gemini غير متاح الآن');
+    return { text: localAnswer(text), local: true, failed: true, reason };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function submitQuestion(text, fromVoice = false) {
+  if (isGenerating || !text.trim()) return null;
+  isGenerating = true;
+  const btn = document.getElementById('chat-submit-btn');
+  btn.disabled = true;
+  appendMessage('user', text);
+  showTyping();
+  if (voiceModeOpen) setVoiceState('thinking');
+  try {
+    const r = await askGemini(text);
+    hideTyping();
+    appendMessage('ai', r.text, r.local);
+    if (r.failed) toast(`${r.reason}؛ أجبك دليل المشروع المحلي`);
+    if (autoSpeak || fromVoice) await speakText(r.text);
+    return r.text;
+  } catch (e) {
+    hideTyping();
+    const fallback = localAnswer(text);
+    appendMessage('ai', fallback, true);
+    toast('استخدمت دليل المشروع المحلي');
+    return fallback;
+  } finally {
+    hideTyping();
+    isGenerating = false;
+    btn.disabled = false;
+  }
+}
+function handleChatSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('chat-input');
+  const v = input.value.trim(); if (!v) return;
+  input.value = ''; submitQuestion(v);
+}
+function sendQuickPrompt(t) { submitQuestion(t); }
+function clearChat() {
+  if (isGenerating) { toast('انتظر انتهاء الرد الحالي'); return; }
+  stopSpeaking(); chatHistory = [];
+  document.getElementById('chat-messages').innerHTML = '';
+  appendMessage('ai', 'بدأنا محادثة جديدة. بماذا أساعدك في مشروعك البحثي؟', !safeGet('gemini_key', ''));
+}
+
+// ============ 8. المساعد الصوتي ============
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognition = null, listening = false, autoSpeak = safeGet('autospeak', '1') === '1';
+let handsFree = true, voiceModeOpen = false, speaking = false;
+let ttsRate = parseFloat(safeGet('tts_rate', '1')) || 1;
+let ttsVoiceName = safeGet('tts_voice', '');
+let recogLang = safeGet('recog_lang', 'ar-EG');
+let voices = [];
+
+function refreshAutoSpeakUI() {
+  document.getElementById('autospeak-icon').textContent = autoSpeak ? '🔊' : '🔇';
+  document.getElementById('autospeak-text').textContent = autoSpeak ? 'القراءة: تعمل' : 'القراءة: متوقفة';
+}
+function toggleAutoSpeak() { autoSpeak = !autoSpeak; safeSet('autospeak', autoSpeak ? '1' : '0'); if (!autoSpeak) stopSpeaking(); refreshAutoSpeakUI(); }
+
+function loadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  voices = speechSynthesis.getVoices();
+  const sel = document.getElementById('voice-select');
+  const arabic = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('ar'));
+  const list = arabic.length ? arabic : voices;
+  sel.innerHTML = list.map(v => `<option value="${escapeHTML(v.name)}">${escapeHTML(v.name)} (${v.lang})</option>`).join('') || '<option value="">لا توجد أصوات متاحة</option>';
+  if (ttsVoiceName && list.some(v => v.name === ttsVoiceName)) sel.value = ttsVoiceName;
+}
+if ('speechSynthesis' in window) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+
+function pickVoice() {
+  return voices.find(v => v.name === ttsVoiceName) || voices.find(v => v.lang === 'ar-EG') || voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ar')) || null;
+}
+function cleanForSpeech(t) {
+  return t.replace(/\*\*/g, '').replace(/[#*_`>]/g, ' ')
+          .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, ' ')
+          .replace(/\s*\n\s*/g, '. ').replace(/\s+/g, ' ').trim();
+}
+function chunkText(t, max = 180) {
+  const parts = t.split(/(?<=[.!؟?،,؛;:])\s+/);
+  const out = []; let cur = '';
+  for (const p of parts) { if ((cur + ' ' + p).length > max && cur) { out.push(cur); cur = p; } else cur = cur ? cur + ' ' + p : p; }
+  if (cur) out.push(cur);
+  return out;
+}
+function speakText(raw) {
+  return new Promise(resolve => {
+    if (!('speechSynthesis' in window)) return resolve();
+    stopSpeaking(true);
+    const chunks = chunkText(cleanForSpeech(raw));
+    if (!chunks.length) return resolve();
+    const voice = pickVoice();
+    speaking = true; setVoiceState('speaking');
+    let i = 0;
+    const next = () => {
+      if (!speaking || i >= chunks.length) { speaking = false; setVoiceState('idle'); return resolve(); }
+      const u = new SpeechSynthesisUtterance(chunks[i++]);
+      u.lang = voice ? voice.lang : 'ar-EG'; if (voice) u.voice = voice;
+      u.rate = ttsRate; u.pitch = 1;
+      u.onend = next;
+      u.onerror = () => { speaking = false; setVoiceState('idle'); resolve(); };
+      speechSynthesis.speak(u);
+    };
+    next();
+  }).then(() => {
+    if (voiceModeOpen && handsFree) setTimeout(() => { if (voiceModeOpen && handsFree && !listening && !speaking) startRecognition(); }, 350);
+  });
+}
+
+// ============ المحادثة الصوتية والتحكم في الإعدادات ============
+function refreshAssistantStatus(state = '') {
+  const badge = document.getElementById('assistant-status');
+  if (!badge) return;
+  if (state) badge.textContent = state;
+  else badge.textContent = safeGet('gemini_key', '') ? 'مفتاح Gemini محفوظ' : 'وضع الدليل المحلي';
+}
+
+function setVoiceState(state) {
+  const labels = {
+    idle: ['اضغط الدائرة وابدأ الحديث', 'أستمع إليك وأجيبك صوتياً، ثم أعود للاستماع تلقائياً.'],
+    listening: ['أستمع إليك الآن', 'تحدث بوضوح، ثم توقف لحظة لأجيبك.'],
+    thinking: ['أجهز الإجابة', 'أراجع سؤالك وضوابط المشروع.'],
+    speaking: ['أتحدث الآن', 'يمكنك إيقاف الصوت أو إنهاء المحادثة في أي وقت.']
+  };
+  const [title, subtitle] = labels[state] || labels.idle;
+  const titleEl = document.getElementById('voice-state');
+  const subEl = document.getElementById('voice-sub');
+  const orb = document.getElementById('voice-orb');
+  if (titleEl) titleEl.textContent = title;
+  if (subEl) subEl.textContent = subtitle;
+  if (orb) orb.className = `orb${state === 'idle' ? '' : ' ' + state}`;
+}
+
+function startRecognition() {
+  if (!SR) {
+    document.getElementById('voice-unsupported').classList.remove('hidden');
+    toast('التعرف على الصوت غير مدعوم في هذا المتصفح');
+    return;
+  }
+  if (listening || isGenerating) return;
+  if (speaking) stopSpeaking();
+  try {
+    recognition = new SR();
+    recognition.lang = recogLang;
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.onstart = () => {
+      listening = true;
+      document.getElementById('mic-btn').classList.add('mic-live');
+      document.getElementById('voice-status-bar').classList.remove('hidden');
+      document.getElementById('voice-status-text').textContent = 'أستمع إليك...';
+      if (voiceModeOpen) setVoiceState('listening');
+    };
+    recognition.onresult = event => {
+      let transcript = '', final = false;
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        transcript += event.results[i][0].transcript;
+        if (event.results[i].isFinal) final = true;
+      }
+      const heard = transcript.trim();
+      if (voiceModeOpen) document.getElementById('voice-user').textContent = heard;
+      document.getElementById('voice-status-text').textContent = heard || 'أستمع إليك...';
+      if (final && heard) {
+        document.getElementById('chat-input').value = heard;
+        if (recognition) recognition.stop();
+        submitQuestion(heard, true);
+      }
+    };
+    recognition.onerror = event => {
+      if (event.error !== 'no-speech' && event.error !== 'aborted') toast('تعذر التقاط الصوت؛ حاول مرة أخرى أو اكتب سؤالك');
+    };
+    recognition.onend = () => {
+      listening = false;
+      document.getElementById('mic-btn').classList.remove('mic-live');
+      document.getElementById('voice-status-bar').classList.add('hidden');
+      if (voiceModeOpen && !speaking && !isGenerating) setVoiceState('idle');
+    };
+    recognition.start();
+  } catch (e) {
+    listening = false;
+    toast('لم يبدأ الميكروفون؛ تحقق من إذن المتصفح');
+  }
+}
+
+function toggleMic() {
+  if (listening && recognition) recognition.stop();
+  else startRecognition();
+}
+function openVoiceMode() {
+  voiceModeOpen = true;
+  document.getElementById('voice-modal').classList.remove('hidden');
+  document.getElementById('voice-unsupported').classList.toggle('hidden', Boolean(SR));
+  document.getElementById('voice-user').textContent = '';
+  document.getElementById('voice-reply').classList.add('hidden');
+  setVoiceState('idle');
+  if (SR) startRecognition();
+}
+function closeVoiceMode() {
+  voiceModeOpen = false;
+  if (recognition && listening) recognition.stop();
+  stopSpeaking();
+  document.getElementById('voice-modal').classList.add('hidden');
+  document.getElementById('voice-status-bar').classList.add('hidden');
+}
+function orbPressed() {
+  if (speaking) { stopSpeaking(); return; }
+  if (listening && recognition) recognition.stop();
+  else startRecognition();
+}
+function toggleHandsFree() {
+  handsFree = !handsFree;
+  document.getElementById('handsfree-btn').textContent = `الاستماع التلقائي: ${handsFree ? 'يعمل' : 'متوقف'}`;
+  if (!handsFree && listening && recognition) recognition.stop();
+  else if (handsFree && voiceModeOpen && !listening && !speaking && !isGenerating) startRecognition();
+}
+function stopSpeaking(preserveState = false) {
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  speaking = false;
+  if (!preserveState) setVoiceState(listening ? 'listening' : 'idle');
+}
+
+function openSettings() {
+  document.getElementById('api-key-input').value = safeGet('gemini_key', '');
+  document.getElementById('voice-select').value = ttsVoiceName;
+  document.getElementById('rate-input').value = ttsRate;
+  document.getElementById('rate-val').textContent = ttsRate.toFixed(1);
+  document.getElementById('lang-select').value = recogLang;
+  loadVoices();
+  document.getElementById('settings-modal').classList.remove('hidden');
+  document.getElementById('api-key-input').focus();
+}
+function closeSettings() { document.getElementById('settings-modal').classList.add('hidden'); }
+function saveSettings() {
+  const key = document.getElementById('api-key-input').value.trim();
+  try {
+    if (key) localStorage.setItem('gemini_key', key);
+    else localStorage.removeItem('gemini_key');
+  } catch (e) { toast('تعذر حفظ الإعدادات في هذا المتصفح'); }
+  ttsVoiceName = document.getElementById('voice-select').value;
+  ttsRate = Number(document.getElementById('rate-input').value) || 1;
+  recogLang = document.getElementById('lang-select').value;
+  safeSet('tts_voice', ttsVoiceName);
+  safeSet('tts_rate', String(ttsRate));
+  safeSet('recog_lang', recogLang);
+  refreshAssistantStatus();
+  closeSettings();
+  toast(key ? 'تم حفظ الإعدادات ومفتاح Gemini في هذا المتصفح' : 'تم حفظ إعدادات الصوت');
+}
+function testVoice() {
+  speakText('مرحباً، هذا اختبار للصوت العربي في مساعد المشروع.');
+}
+document.getElementById('rate-input').addEventListener('input', event => {
+  document.getElementById('rate-val').textContent = Number(event.target.value).toFixed(1);
+});
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  if (!document.getElementById('settings-modal').classList.contains('hidden')) closeSettings();
+  if (!document.getElementById('voice-modal').classList.contains('hidden')) closeVoiceMode();
+  if (!document.getElementById('img-modal').classList.contains('hidden')) closeImage();
+});
+refreshAssistantStatus();
+refreshAutoSpeakUI();
+buildAxes();
+selectAxis(0);
+updateTimeline();
+setInterval(updateTimeline, 1000);
+</script>
+</body>
+</html>
